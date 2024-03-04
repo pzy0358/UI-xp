@@ -7,6 +7,7 @@
             <div class="item"
             :key="index"
             v-for="item,index in Object.keys(ElementPlusIconsVue)"
+            @click="clickItem(item)"
             >
             <div class="text">
                 <component :is="`el-icon-${toLine(item)}`"></component>
@@ -22,6 +23,7 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import {toLine} from '../../../utils/index'
 
 import {watch, ref } from 'vue';
+import { useCopy } from '../../../hooks/useCopy';
 
 const props = defineProps<{
     title:string,
@@ -34,6 +36,13 @@ const handleClick=()=>{
     // console.log(111);
     
     emits('update:visible',!props.visible)
+}
+// 文本复制
+const clickItem=(item:string)=>{
+    const text = `el-icon-${toLine(item)}`
+    useCopy(text)
+    // 关闭弹窗
+    emits('update:visible',false)
 }
 
 const dialogVisible = ref<boolean>(props.visible)

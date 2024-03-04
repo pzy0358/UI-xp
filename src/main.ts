@@ -20,6 +20,9 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     // app.component(key, component)
 }
   
+import mUI from './components'
+app.use(mUI)
+
 app.use(ElementPlus)
 app.use(router)
 app.mount('#app')
