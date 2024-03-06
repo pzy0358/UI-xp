@@ -3,8 +3,9 @@
     default-active="1"
     class="el-menu-vertical-demo"
     :collapse="collapse"
+    router
   >
-    <el-menu-item index="1">
+    <el-menu-item index="/">
       <el-icon><el-icon-menu /></el-icon>
       <span>首页</span>
     </el-menu-item>
@@ -12,9 +13,13 @@
       <el-icon><el-icon-menu /></el-icon>
       <span>图标选择器</span>
     </el-menu-item>
-    <el-menu-item index="3">
+    <el-menu-item index="/chooseArea">
       <el-icon><el-icon-menu /></el-icon>
-      <span>趋势标记</span>
+      <span>省市区选择</span>
+    </el-menu-item>
+    <el-menu-item index="/form">
+      <el-icon><el-icon-menu /></el-icon>
+      <span>表单</span>
     </el-menu-item>
   </el-menu>
 </template>
