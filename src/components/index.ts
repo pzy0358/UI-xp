@@ -4,8 +4,9 @@ import menu from "./menu";
 // import Menu from './menu'
 import { App } from "vue";
 import form from "./form"
+import table from "./table"
 
-const components = [chooseArea, chooseIcon, menu, form];
+const components = [chooseArea, chooseIcon, menu, form,table];
 
 export default {
   install(app: App) {

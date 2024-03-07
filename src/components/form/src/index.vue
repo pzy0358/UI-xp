@@ -41,7 +41,11 @@
           <slot name="uploadTip"></slot>
         </el-upload>
         <!-- 渲染wangeditor插件 -->
-        <div id="editor" v-if="item.type === 'editor'" style="border: 1px solid #ccc">
+        <div
+          id="editor"
+          v-if="item.type === 'editor'"
+          style="border: 1px solid #ccc"
+        >
           <Toolbar
             style="border-bottom: 1px solid #ccc"
             :editor="editorRef"
@@ -52,7 +56,7 @@
             style="height: 500px; overflow-y: hidden"
             v-model="model[item.prop!]"
             :defaultConfig="{
-              placeholder:item.placeholder,
+              placeholder: item.placeholder,
               ...item.attrs,
             }"
             :mode="default"
@@ -212,7 +216,7 @@ onBeforeUnmount(() => {
   editor.destroy();
 });
 
-const handleCreated = (editor) => {
+const handleCreated = (editor: any) => {
   editorRef.value = editor; // 记录 editor 实例，重要！
 };
 </script>
